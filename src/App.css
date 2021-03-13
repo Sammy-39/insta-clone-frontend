@@ -1,38 +1,346 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+
+.nav{
+    padding: 0 15px !important;
+    position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.brand-logo, h2{
+    font-family: 'Grand Hotel', cursive;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.logout-btn{
+    text-transform: none !important;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+#slide-out{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 130px;
+}
+
+#slide-out > button{
+    margin-top: 20px;
+}
+
+.auth-card{
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+    margin: 100px auto;
+    position: relative;
+}
+
+input:focus {
+    border-bottom: 1px solid rgb(8, 93, 252)  !important;
+    box-shadow: 0 1px 0 0 rgb(8, 93, 252)  !important;
+}
+
+.post-comment{
+    margin-top: 5px;
+}
+
+.post-comment > p > span{
+    font-weight: bold;
+}
+
+.profile{
+    max-width: 950px;
+    margin: 0px auto;
+}
+
+.profile-header{
+    display: flex;
+    justify-content: space-around;
+    margin: 18px 0px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #777;
+}
+
+.profile-left{
+    position: relative;
+}
+
+.profile-pic-con{
+    margin-right: 12px;
+}
+
+.profile-pic{
+    width:160px;
+    height:160px;
+    border-radius:80px;
+    margin-left: 10px;
+}
+
+.profile-follow{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    cursor: pointer;
+}
+
+.follow, .unfollow{
+    font-size: 30px;
+}
+
+.follow:hover, .unfollow:hover{
+    font-size: 35px;
+}
+
+.profile-name{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name > h4{
+    margin: 0;
+    padding: 0;
+    word-break: break-all;
+}
+
+.profile-name > h5{
+    word-break: break-all;
+}
+
+.profile-details{
+    display: flex;
+    justify-content: center;
+    width: max-content;
+}
+
+.profile-details > h6{
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 500px){
+    .profile-header{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-name{
+        align-items: center;
+    }
+
+    .profile-details{
+        flex-direction: column;
+    }
+
+    .profile-details > h6{
+        padding: 0;
+        margin: 0;
+        margin-bottom: 5px;
+    }
+
+    .profile-name > h4{
+        margin: 0;
+        padding: 0;
+        margin-bottom: 5px;
+    }
+
+    .profile-name > h5{
+        margin: 0;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+}
+
+.profile-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.profile-gallery-item{
+    max-width: 450px;
+    min-width: 320px;
+    margin-bottom: 10px;
+}
+
+.no-posts{
+    margin-top: 120px;
+    padding: 20px;
+}
+
+.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.home-search{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    font-size: 16px;
+    top: 90px;
+    right: 0;
+    width: 36px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius:20px;
+    background-color: rgb(245, 245, 245);
+    padding: 7px;
+    transition: all .9s;
+    z-index: 2;
+}
+
+.home-search:hover{
+    width: 115px;
+    z-index: 2;
+}
+
+.home-search > .left{
+    font-size: 30px;
+    margin-right: 0;
+    cursor: pointer;
+}
+
+.search-con{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search-con > .search{
+    font-size: 15px;
+    margin-right: 2px;
+}
+
+.modal-btns{
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-btns > .modal-close{
+    margin-left: 20px;
+}
+
+.home-card{
+    max-width: 550px;
+    height: max-content;
+    padding: 0px 20px;
+    position: relative;
+}
+
+.home-card > h5{
+    cursor: pointer;
+    width: max-content;
+}
+
+.card-options-con{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.card-options:hover{
+    font-size: 25px;
+}
+
+.home-card-content{
+    position: relative;
+}
+
+.fav{
+    cursor: pointer;
+}
+
+.like{
+    color: red;
+}
+
+.likes-count{
+    position: absolute;
+    top: 26px;
+    left: 55px
+}
+
+.createPost{
+    margin: 100px auto;
+    max-width: 500px;
+    padding: 20px;
+    text-align: center;
+}
+
+.file-field{
+    display: flex;
+    align-items: center;
+}
+
+.file-field > i{
+    font-size: 50px;
+}
+
+.file-path{
+    flex: 1;
+}
+
+.load{
+    position: absolute;
+    top: -7px;
+    left: 0px;
+}
+
+#toast-container {
+    top: 15vh !important;
+    bottom: 0 !important; 
+}
+
+.success{
+    background-color: green;
+}
+
+.warning{
+    background-color: red !important;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: fit-content;
+    font-size: 15px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 90%;
+    left: 50%;
+    margin-left: -30px;
+    opacity: 0;
+    transition: opacity 0.3s;
   }
-  to {
-    transform: rotate(360deg);
+    
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
   }
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+.reset-btn{
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
