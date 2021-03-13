@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# insta-clone-frontend
+
+insta-clone app with post image, like, comment and delete post, follow, unfollow and search users, view user profile, all posts and following posts functionalities.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
