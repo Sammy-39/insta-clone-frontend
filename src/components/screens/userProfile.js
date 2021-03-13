@@ -115,7 +115,7 @@ const UserProfile = () =>{
                         </div>
                         <div className="tooltip follow">
                             { user && user.followers.includes(state._id) &&
-                                <i className="material-icons tooltipped unfollow #d50000 red-text accent-4" onClick={e=>handleUnfollow(e)}> 
+                                <i className="material-icons #d50000 red-text accent-4" onClick={e=>handleUnfollow(e)}> 
                                     person_remove</i> }
                             <span className="tooltiptext">Unfollow</span>
                         </div>
