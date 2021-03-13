@@ -17,7 +17,7 @@ const Profile = () =>{
         try{
             M.Toast.dismissAll()
             setShowLoader(true)
-            const res = await fetch("/api/myPost",{
+            const res = await fetch("https://insta-clone-backend-app.herokuapp.com/api/myPost",{
                 headers: {"authorization": localStorage.getItem("token")}
             })
             const resData = await res.json()

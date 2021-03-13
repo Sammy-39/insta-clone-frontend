@@ -20,7 +20,7 @@ const UserProfile = () =>{
         try{
             M.Toast.dismissAll()
             setShowLoader(true)
-            const res = await fetch(`/api/user/${id}`,{
+            const res = await fetch(`https://insta-clone-backend-app.herokuapp.com/api/user/${id}`,{
                 headers: {"authorization": localStorage.getItem("token")}
             })
             const resData = await res.json()
@@ -50,7 +50,7 @@ const UserProfile = () =>{
         try{
             M.Toast.dismissAll()
             setShowLoader(true)
-            const res = await fetch("/api/follow",{
+            const res = await fetch("https://insta-clone-backend-app.herokuapp.com/api/follow",{
                 method: "PUT",
                 headers: {"Content-Type": "application/json","authorization": localStorage.getItem("token")},
                 body: JSON.stringify({followId:id})
@@ -76,7 +76,7 @@ const UserProfile = () =>{
         try{
             M.Toast.dismissAll()
             setShowLoader(true)
-            const res = await fetch("/api/unfollow",{
+            const res = await fetch("https://insta-clone-backend-app.herokuapp.com/api/unfollow",{
                 method: "PUT",
                 headers: {"Content-Type": "application/json","authorization": localStorage.getItem("token")},
                 body: JSON.stringify({unfollowId:id})

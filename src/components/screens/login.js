@@ -29,7 +29,7 @@ const Login = () =>{
             M.Toast.dismissAll()
             setDisable(true)
             setShowLoader(true)
-            const res = await fetch('/api/signin',{
+            const res = await fetch('https://insta-clone-backend-app.herokuapp.com/api/signin',{
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({

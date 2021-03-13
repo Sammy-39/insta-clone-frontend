@@ -23,7 +23,7 @@ const UpdatePassword = () =>{
             M.Toast.dismissAll()
             setDisable(true)
             setShowLoader(true)
-            const res = await fetch('/api/change-password',{
+            const res = await fetch('https://insta-clone-backend-app.herokuapp.com/api/change-password',{
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({

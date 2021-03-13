@@ -29,7 +29,7 @@ const Home = () =>{
         try{
             setShowLoader(true)
             M.Toast.dismissAll()
-            const res = await fetch("/api/allPost",{
+            const res = await fetch("https://insta-clone-backend-app.herokuapp.com/api/allPost",{
                 headers: {"authorization": localStorage.getItem("token")}
             })
             const resData = await res.json()
@@ -64,7 +64,7 @@ const Home = () =>{
             setDisable(true)
             if(e.target.className.indexOf('like')===-1){
                 e.target.className += ' like'
-                const res = await fetch("/api/like",{
+                const res = await fetch("https://insta-clone-backend-app.herokuapp.com/api/like",{
                     method: "PUT",
                     headers: {"Content-Type": "application/json","authorization": localStorage.getItem("token")},
                     body: JSON.stringify({postId})
@@ -85,7 +85,7 @@ const Home = () =>{
             }
             else{
                 e.target.className = 'material-icons fav'
-                const res = await fetch("/api/unlike",{
+                const res = await fetch("https://insta-clone-backend-app.herokuapp.com/api/unlike",{
                     method: "PUT",
                     headers: {"Content-Type":"application/json","authorization": localStorage.getItem("token")},
                     body: JSON.stringify({postId})
@@ -121,7 +121,7 @@ const Home = () =>{
             setShowCardLoader(true)
             setCurrPost(idx)
             e.target[0].disabled = true
-            const res = await fetch("/api/comment",{
+            const res = await fetch("https://insta-clone-backend-app.herokuapp.com/api/comment",{
                 method: "PUT",
                 headers: {"Content-Type": "application/json","authorization": localStorage.getItem("token")},
                 body: JSON.stringify({postId,text:e.target[0].value})
@@ -155,7 +155,7 @@ const Home = () =>{
             setShowCardLoader(true)
             setCurrPost(idx)
             setDisable(true)
-            const res = await fetch(`/api/delete/${postId}`,{
+            const res = await fetch(`https://insta-clone-backend-app.herokuapp.com/api/delete/${postId}`,{
                 method: "DELETE",
                 headers: {"authorization": localStorage.getItem("token")}
             })
@@ -185,7 +185,7 @@ const Home = () =>{
             e.preventDefault()
             setDisable(true)
             setShowModalLoader(true)
-            const res = await fetch(`/api/search-user/${email}`,{
+            const res = await fetch(`https://insta-clone-backend-app.herokuapp.com/api/search-user/${email}`,{
                 headers: {"authorization": localStorage.getItem("token")}
             })
             const resData = await res.json()

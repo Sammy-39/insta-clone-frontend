@@ -22,7 +22,7 @@ const Reset = () =>{
             M.Toast.dismissAll()
             setDisable(true)
             setShowLoader(true)
-            const res = await fetch('/api/reset-password',{
+            const res = await fetch('https://insta-clone-backend-app.herokuapp.com/api/reset-password',{
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({

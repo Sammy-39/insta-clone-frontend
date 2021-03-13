@@ -57,7 +57,7 @@ const Signup = () =>{
             setShowLoader(true)
             const imageURL = await postImg()
             if(imageURL){
-                const res = await fetch('/api/signup',{
+                const res = await fetch('https://insta-clone-backend-app.herokuapp.com/api/signup',{
                     method: "POST",
                     headers: {"Content-Type": "application/json"},
                     body: JSON.stringify({

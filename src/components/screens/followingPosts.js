@@ -23,7 +23,7 @@ const FollowingPosts = () =>{
         try{
             setShowLoader(true)
             M.Toast.dismissAll()
-            const res = await fetch("/api/myFollowingPost",{
+            const res = await fetch("https://insta-clone-backend-app.herokuapp.com/api/myFollowingPost",{
                 headers: {"authorization": localStorage.getItem("token")}
             })
             const resData = await res.json()
@@ -55,7 +55,7 @@ const FollowingPosts = () =>{
             setCurrPost(idx)
             if(e.target.className.indexOf('like')===-1){
                 e.target.className += ' like'
-                const res = await fetch("/api/like",{
+                const res = await fetch("https://insta-clone-backend-app.herokuapp.com/api/like",{
                     method: "PUT",
                     headers: {"Content-Type": "application/json","authorization": localStorage.getItem("token")},
                     body: JSON.stringify({postId})
@@ -76,7 +76,7 @@ const FollowingPosts = () =>{
             }
             else{
                 e.target.className = 'material-icons fav'
-                const res = await fetch("/api/unlike",{
+                const res = await fetch("https://insta-clone-backend-app.herokuapp.com/api/unlike",{
                     method: "PUT",
                     headers: {"Content-Type":"application/json","authorization": localStorage.getItem("token")},
                     body: JSON.stringify({postId})
@@ -112,7 +112,7 @@ const FollowingPosts = () =>{
             setShowCardLoader(true)
             setCurrPost(idx)
             e.target[0].disabled = true
-            const res = await fetch("/api/comment",{
+            const res = await fetch("https://insta-clone-backend-app.herokuapp.com/api/comment",{
                 method: "PUT",
                 headers: {"Content-Type": "application/json","authorization": localStorage.getItem("token")},
                 body: JSON.stringify({postId,text:e.target[0].value})

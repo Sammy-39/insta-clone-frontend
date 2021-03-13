@@ -2,7 +2,6 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://insta-clone-backend-app.herokuapp.com/",
   "dependencies": {
     "materialize-css": "^1.0.0-rc.2",
     "react": "^17.0.1",

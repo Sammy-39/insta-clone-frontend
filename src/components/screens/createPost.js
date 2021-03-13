@@ -52,7 +52,7 @@ const CreatePost = () =>{
             setShowLoader(true)
             const imageURL = await postImg()
             if(imageURL){
-                const res = await fetch('/api/createPost',{
+                const res = await fetch('https://insta-clone-backend-app.herokuapp.com/api/createPost',{
                     method: "POST",
                     headers: {"Content-Type": "application/json","authorization": localStorage.getItem("token")},
                     body: JSON.stringify({
