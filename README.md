@@ -2,6 +2,8 @@
 
 insta-clone app with post image, like, comment and delete post, follow, unfollow and search users, view user profile, all posts and following posts functionalities.
 
+Backend repo - https://github.com/Sammy-39/insta-clone-backend
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
